@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   def index
+    @blogs = Blog.all
   end
 
   def new
@@ -7,7 +8,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    Blog.create(params.require(:blog).permit(:title, :content))
+    Blog.create(blog_params)
     redirect_to new_blog_path
   end
 
