@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    params[:id]
   end
 
   private
